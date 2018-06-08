@@ -6,7 +6,7 @@ spring:
       host: localhost
       port: 8500
 server:
-  port: 8088
+  port: 8081
 eureka:
   client:
     serviceUrl:

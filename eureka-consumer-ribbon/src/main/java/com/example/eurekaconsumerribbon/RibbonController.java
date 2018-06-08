@@ -20,7 +20,7 @@ public class RibbonController {
     //可以进RibbonLoadBalancerClient源码打断点确认具体的服务类型
     @GetMapping("consumer")
     public String hello() {
-        // TODO 接口调用会出现无法发现服务eureka-client,产生这个异常的原因可能是因为Eureka的自我保护模式造成,自我保护模式在单机环境下特别容易出现
-        return template.getForObject("http://eureka-client/hello", String.class);
+        //接口调用会出现无法发现服务eureka-client,产生这个异常的原因可能是因为Eureka的自我保护模式造成,自我保护模式在单机环境下特别容易出现
+        return template.getForObject("http://eureka-client/", String.class);
     }
 }
