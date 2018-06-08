@@ -22,10 +22,10 @@ public class DemoController {
 
     @GetMapping("consumer")
     public String serviceChoose() {
-        //通过负载均衡选择一个eureka-client的服务实例,这里的参数应该是服务的名称
+        //通过负载均衡选择一个eureka-client的服务实例,这里的参数应该是服务的名称eureka-client
         ServiceInstance serviceInstance = loadBalancerClient.choose("eureka-client");
 
-        //拼接访问接口的路径
+        //拼接访问接口的路径,服务提供方eureka-client的api路径为http://localhost:8080/
         String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/";
         System.out.println(url);
         return template.getForObject(url, String.class);
