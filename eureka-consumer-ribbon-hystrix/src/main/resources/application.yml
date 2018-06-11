@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: hystrix-consumer-dashboard
+server:
+  port: 8088
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
